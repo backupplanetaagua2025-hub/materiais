@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Materiais de Venda — Planeta Água</title>
-<meta name="description" content="Tabelas de preços, fotos, catálogos e campanhas para os vendedores da Planeta Água.">
+<meta name="description" content="Tabelas de preços, fotos, manual de refis e artes para os vendedores da Planeta Água.">
 <meta name="theme-color" content="#0c5b96">
 <link rel="manifest" href="_site/manifest.webmanifest">
 <link rel="icon" href="_site/icone-192.png">
@@ -194,6 +194,70 @@
   .toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);opacity:0;z-index:70;
     background:#111a26;color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;transition:.25s;pointer-events:none;max-width:90vw}
   .toast.on{opacity:1;transform:translateX(-50%)}
+  /* manual de refis */
+  .mhead{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px;justify-content:space-between}
+  .mhead .tit{margin-bottom:2px}
+  .passos{display:grid;gap:8px;margin:14px 0 4px;grid-template-columns:1fr}
+  @media (min-width:700px){ .passos{grid-template-columns:repeat(3,1fr)} }
+  .passo{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:13px;color:var(--muted)}
+  .passo i{font-style:normal;flex:none;width:24px;height:24px;border-radius:50%;background:var(--azulSuave);color:var(--azul);display:grid;place-items:center;font-weight:700;font-size:12.5px}
+  .passo b{color:var(--ink);font-weight:600} .passo em{font-style:normal}
+  @media (max-width:699px){ .passos{grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px} .passo{flex-direction:column;gap:6px;padding:9px;font-size:12px;line-height:1.3} .passo em{display:none} }
+  @media (min-width:900px){ .gchips{flex-wrap:wrap;overflow:visible} }
+  .rfiltro{position:sticky;top:calc(61px + env(safe-area-inset-top));z-index:20;background:var(--bg);padding:10px 16px 8px;margin:0 -16px}
+  .rfiltro .busca{margin:0 0 8px}
+  .gchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+  .gchips::-webkit-scrollbar{display:none}
+  .gchips button{flex:none;height:32px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:12.5px;font-weight:500;color:var(--muted)}
+  .gchips button.on{background:var(--azul);border-color:var(--azul);color:#fff}
+  :root[data-tema="escuro"] .gchips button.on{color:#0b1420}
+  @media (prefers-color-scheme:dark){ :root:not([data-tema="claro"]) .gchips button.on{color:#0b1420} }
+  .rgrade{display:grid;gap:10px;grid-template-columns:1fr}
+  @media (min-width:800px){ .rgrade{grid-template-columns:1fr 1fr} }
+  .rf{display:flex;gap:12px;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);min-width:0;break-inside:avoid}
+  .rf .ft{flex:none;width:78px;height:104px;border-radius:10px;background:#fff;overflow:hidden;cursor:zoom-in;position:relative;border:1px solid var(--line2)}
+  .rf .ft img{width:100%;height:100%;object-fit:contain;display:block}
+  .rf .ft small{position:absolute;left:0;right:0;bottom:0;font-size:9.5px;text-align:center;background:rgba(10,20,35,.62);color:#fff;padding:1px 0}
+  .rf .tx{flex:1;min-width:0}
+  .rf .topo{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:2px}
+  .rf .cod{font-size:11.5px;font-weight:600;color:var(--azul);background:var(--azulSuave);padding:1px 8px;border-radius:6px;letter-spacing:.01em}
+  .rf .mv{font-size:10.5px;font-weight:600;color:var(--verde);background:var(--verdeSuave);padding:1px 7px;border-radius:6px}
+  .rf h3{margin:0;font-size:15.5px;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+  .rf .serve{font-size:13px;color:var(--ink);margin:4px 0 8px;line-height:1.45}
+  .rf .serve span{color:var(--muted2);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:1px}
+  .rf .chips .chip{font-size:11.5px;padding:2px 8px}
+  .chip.ok{background:var(--verdeSuave);border-color:transparent;color:var(--verde)}
+  .chip.nao{background:var(--ambarSuave);border-color:transparent;color:var(--ambar)}
+  .rf .dica{margin-top:8px;font-size:12.5px;color:var(--muted);line-height:1.45;padding-left:10px;border-left:3px solid var(--line)}
+  .rf.alerta{border-color:var(--vermelho);box-shadow:0 0 0 1px var(--vermelho) inset,var(--shadow)}
+  .rf.alerta .dica{border-left-color:var(--vermelho);color:var(--ink)}
+  .rf mark{background:color-mix(in srgb,var(--azul2) 28%,transparent);color:inherit;border-radius:3px;padding:0 1px}
+  details.dicas{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);margin-top:10px}
+  details.dicas summary{cursor:pointer;padding:12px 16px;font-weight:600;list-style:none;display:flex;align-items:center;gap:8px}
+  details.dicas summary::-webkit-details-marker{display:none}
+  details.dicas summary::after{content:'+';margin-left:auto;color:var(--muted2);font-size:18px;font-weight:400}
+  details.dicas[open] summary::after{content:'–'}
+  details.dicas .in{padding:0 16px 14px;color:var(--muted);font-size:13.5px}
+  details.dicas .in b{color:var(--ink)}
+  details.dicas ul{margin:0;padding-left:18px} details.dicas li{margin:5px 0}
+  .so-impressao{display:none}
+  .cabimp{align-items:center;gap:12px;padding-bottom:10px;border-bottom:3px solid var(--azul);margin-bottom:4px}
+  .cabimp img{height:46px} .cabimp b{display:block;font-size:17px;color:var(--azul)} .cabimp span{display:block;font-size:11.5px;color:var(--muted)}
+  @media print{
+    @page{size:A4;margin:11mm 10mm 12mm}
+    :root,:root[data-tema="escuro"]{--bg:#fff;--card:#fff;--card2:#f6f8fa;--ink:#1a2433;--muted:#4b5666;--muted2:#6b7686;--line:#d9e0e8;--line2:#eef1f5;--azul:#0c5b96;--azul2:#1189cc;--azulSuave:#e8f2fa;--verde:#0a7d55;--verdeSuave:#e3f5ec;--ambar:#8f5000;--ambarSuave:#fdf3e1;--vermelho:#c0362c}
+    body{padding:0;font-size:12px;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    header,nav,.rfiltro,.nao-imprime,.rodape,.toast,.vis,.passos{display:none !important}
+    .wrap{max-width:none;padding:0}
+    .so-impressao{display:block} .cabimp.so-impressao{display:flex}
+    .rf{box-shadow:none;padding:8px;gap:9px}
+    .rf .ft{width:60px;height:80px}
+    .rf h3{font-size:13px} .rf .serve{font-size:11px;margin:2px 0 5px} .rf .dica{font-size:10.5px;margin-top:5px}
+    .rf .chips .chip{font-size:10px;padding:1px 6px}
+    .rgrade{grid-template-columns:1fr 1fr;gap:6px}
+    h2.sec{margin:14px 0 6px;font-size:14.5px;break-after:avoid}
+    details.dicas{box-shadow:none;break-inside:avoid} details.dicas summary::after,details.dicas[open] summary::after{content:''}
+  }
   .vazio{padding:30px 10px;text-align:center;color:var(--muted)}
   .rodape{margin:40px 0 10px;text-align:center;color:var(--muted2);font-size:12px}
   .esconde{display:none !important}
@@ -228,6 +292,7 @@
 
 <script src="_site/dados.js"></script>
 <script src="_site/produtos.js"></script>
+<script src="_site/refis.js"></script>
 <script>
 (function(){
 'use strict';
@@ -276,7 +341,7 @@ function toast(t){ var e=$('toast'); e.textContent=t; e.classList.add('on'); cle
 /* ---------- navegação ---------- */
 var ABAS = [
   ['inicio','Início','casa'], ['precos','Preços','preco'], ['produtos','Produtos','gota'],
-  ['divulgacao','Divulgação','mega'], ['consulta','Consulta','livro']
+  ['divulgacao','Divulgação','mega'], ['refis','Refis','livro']
 ];
 function navHTML(){ return ABAS.map(function(a){ return '<a href="#'+a[0]+'" data-aba="'+a[0]+'">'+ic(a[2])+'<span>'+a[1]+'</span></a>'; }).join(''); }
 $('navBaixo').innerHTML = navHTML();
@@ -334,25 +399,23 @@ function limpaTitulo(p){ return p.replace(/ \(Everest\)/,' · Everest'); }
 /* ---------- páginas ---------- */
 function pgInicio(){
   var tab = sec(S.precos).filter(function(i){ return i.ext==='pdf'; });
-  var manual = A.filter(function(i){ return /Manual Refis/.test(i.nome); })[0];
-  var argum = A.filter(function(i){ return /Argumentos/.test(i.nome); })[0];
   var at = function(hrefA, icn, t, s, attr){ return '<a class="at" href="'+hrefA+'" '+(attr||'')+'><span class="ic">'+ic(icn)+'</span><b>'+t+'</b><span>'+s+'</span></a>'; };
   var tabP = tab.filter(function(i){return /Purificadores/.test(i.nome);})[0], tabB = tab.filter(function(i){return /Bebedouros/.test(i.nome);})[0];
   var novos = A.filter(function(i){ return i.sec!==S.precos && novo(i); }).slice().sort(function(a,b){ return a.data<b.data?1:a.data>b.data?-1:0; }).slice(0,10);
-  var destaque = novos.length ? null : sec(S.div).filter(function(i){ return /Lançamento Foz.*digital/.test(i.pasta) && ehImg(i); }).slice(0,6);
-  return '<div class="busca">'+ic('busca')+'<input id="q" type="search" placeholder="Buscar: Foz, tabela, refil, selo…" autocomplete="off"></div>'
+  var destaque = novos.length ? null : sec(S.div).filter(function(i){ return i.pasta==='Stories' && ehImg(i); }).slice(0,6);
+  return '<div class="busca">'+ic('busca')+'<input id="q" type="search" placeholder="Buscar: Foz, tabela, IBBL, refil…" autocomplete="off"></div>'
     + avisoOffline()
-    + '<h1 class="tit">Olá! O que você precisa hoje?</h1><p class="sub">Tudo para vender: preços, fotos, catálogos e campanhas — sempre na versão mais nova.</p>'
+    + '<h1 class="tit">Olá! O que você precisa hoje?</h1><p class="sub">Tudo para vender: preços, fotos, manual de refis e artes para postar — sempre na versão mais nova.</p>'
     + '<div class="atalhos">'
     + (tabP?at(href(tabP.arq),'preco','Tabela dos purificadores','Everest · '+(window.TABELA_DATA||''),'target="_blank" rel="noopener"'):'')
     + (tabB?at(href(tabB.arq),'preco','Tabela dos bebedouros','Knox · Industrial e UNIQ','target="_blank" rel="noopener"'):'')
-    + (manual?at(href(manual.arq),'livro','Manual de refis','Qual refil serve em cada aparelho','target="_blank" rel="noopener"'):'')
-    + (argum?at(href(argum.arq),'doc','Argumentos de venda','Everest','target="_blank" rel="noopener"'):'')
+    + at('#refis','livro','Manual de refis','Qual refil serve em cada aparelho')
+    + at('#divulgacao','mega','Artes para postar','Stories e posts sem promoção')
     + '</div>'
     + '<h2 class="sec">Produtos <span class="esp"></span><a class="bt" href="#produtos">Ver todos</a></h2>'
     + '<div class="prods">'+P.filter(function(p){return p.grupo==='Purificadores Everest';}).slice().sort(function(a,b){return (b.selo?1:0)-(a.selo?1:0);}).slice(0,4).map(cardProd).join('')+'</div>'
     + (novos.length ? '<h2 class="sec">Novidades</h2><div class="grade">'+novos.map(cardArq).join('')+'</div>'
-                    : '<h2 class="sec">Em destaque: lançamento do Foz <span class="esp"></span><a class="bt" href="#divulgacao">Ver campanhas</a></h2><div class="grade">'+destaque.map(cardArq).join('')+'</div>');
+                    : '<h2 class="sec">Para postar nos stories <span class="esp"></span><a class="bt" href="#divulgacao">Ver todas</a></h2><div class="grade">'+destaque.map(cardArq).join('')+'</div>');
 }
 function avisoOffline(){
   if(!('serviceWorker' in navigator) || location.protocol==='file:') return '';
@@ -361,12 +424,13 @@ function avisoOffline(){
 function pgPrecos(){
   var it = sec(S.precos);
   var pdfs = it.filter(function(i){ return !i.pasta && i.ext==='pdf'; });
-  var imgs = it.filter(function(i){ return !i.pasta && ehImg(i); });
-  var zap = it.filter(function(i){ return i.pasta; });
+  var imgs = it.filter(function(i){ return i.pasta && ehImg(i); });
   return '<h1 class="tit">Tabelas de preços</h1><p class="sub">Versão de '+(window.TABELA_DATA||'')+'. Valores sujeitos a alteração sem aviso prévio.</p>'
     + '<h2 class="sec">Em PDF</h2><div class="lista">'+pdfs.map(linhaArq).join('')+'</div>'
-    + grupoHTML('Em imagem', imgs)
-    + grupoHTML('Em partes, para mandar no WhatsApp', zap);
+    + '<p class="nota">O PDF chega ao cliente sem perder qualidade: no WhatsApp, mande como <b>Documento</b>.</p>'
+    + grupoHTML('Purificadores Everest em imagem', imgs.filter(function(i){ return /Purificadores/.test(i.nome); }))
+    + grupoHTML('Bebedouros Knox em imagem', imgs.filter(function(i){ return /Bebedouros/.test(i.nome); }))
+    + '<p class="nota">As imagens são a mesma tabela do PDF dividida em partes, para ficarem legíveis quando enviadas como foto.</p>';
 }
 function fotoProd(p){
   if(p.img) return p.img;
@@ -406,29 +470,113 @@ function pgProduto(id){
 }
 function pgDivulgacao(){
   var it = sec(S.div);
-  var camp = it.filter(function(i){ return /^Campanhas\//.test(i.pasta); });
-  var resto = it.filter(function(i){ return !/^Campanhas\//.test(i.pasta); });
-  var txt = resto.filter(function(i){ return i.ext==='txt'; });
-  return '<h1 class="tit">Divulgação</h1><p class="sub">Artes prontas para postar e mandar aos clientes. "Baixar" traz a versão leve, ideal para WhatsApp.</p>'
-    + porPasta(camp, function(p, g){ return grupoHTML(limpaTitulo(p.replace(/^Campanhas\//,'Campanha ')), g); })
-    + porPasta(resto.filter(function(i){return i.ext!=='txt';}), function(p, g){ return grupoHTML(p, g); })
+  var txt = it.filter(function(i){ return i.ext==='txt'; });
+  var ordem = function(p){ return /^Stories/.test(p)?0:/^Posts/.test(p)?1:2; };
+  var resto = it.filter(function(i){ return i.ext!=='txt'; }).slice().sort(function(a,b){ return ordem(a.pasta)-ordem(b.pasta); });
+  return '<h1 class="tit">Divulgação</h1><p class="sub">Artes para postar nos stories e no status do WhatsApp — nenhuma tem promoção ou prazo. "Baixar" traz a versão leve.</p>'
+    + porPasta(resto, function(p, g){ return grupoHTML(p, g); })
     + (txt.length?'<h2 class="sec">Textos prontos</h2><div class="lista" id="textos">'+txt.map(function(t){return '<div class="li"><div class="tx"><b>'+esc(nomeBonito(t))+'</b><span id="tx_'+t.id+'">carregando…</span><div class="ac"><button class="bt" data-copiar="'+t.id+'">'+ic('copiar')+'Copiar</button></div></div></div>';}).join('')+'</div>':'');
 }
-function pgConsulta(){
-  var fab = sec(S.fab), vend = sec(S.vend);
-  return '<h1 class="tit">Consulta</h1><p class="sub">Manual de refis, argumentos de venda e os catálogos dos fabricantes.</p>'
-    + '<h2 class="sec">Vendas e treinamento</h2><div class="lista">'+vend.map(linhaArq).join('')+'</div>'
-    + porPasta(fab, function(p, g){ return '<h2 class="sec">'+esc(p)+'</h2><div class="lista">'+g.map(linhaArq).join('')+'</div>'; });
+/* ---------- manual de refis ---------- */
+var R = window.REFIS || [], RG = window.REFIS_GRUPOS || [];
+function manualPdf(){ return A.filter(function(i){ return /Manual de Refis/i.test(i.nome) && i.ext==='pdf'; })[0]; }
+function grupoCurto(g){ return g.replace(/ \(.*\)$/,'').replace('Outras marcas de purificador','Outras marcas').replace('Aparelhos Planeta Água','Planeta Água').replace('Masterfrio, New Up e Evidence','Masterfrio / New Up'); }
+function marcaTxt(s, q){
+  s = esc(s); if(!q) return s;
+  var t = norm(q).split(/\s+/).filter(function(w){ return w.length>1; }); if(!t.length) return s;
+  // destaca sem mexer nos acentos: compara pela versão sem acento, letra a letra
+  var n = norm(s), marcas = new Array(s.length+1).join('0').split('');
+  if(n.length!==s.length) return s;
+  t.forEach(function(w){ var i=n.indexOf(w); while(i>=0){ for(var k=i;k<i+w.length;k++) marcas[k]='1'; i=n.indexOf(w,i+w.length); } });
+  var out='', aberto=false;
+  for(var i=0;i<s.length;i++){ if(marcas[i]==='1'&&!aberto){out+='<mark>';aberto=true;} if(marcas[i]!=='1'&&aberto){out+='</mark>';aberto=false;} out+=s[i]; }
+  return out+(aberto?'</mark>':'');
+}
+function cardRefil(r, q){
+  var chips = [];
+  if(r.vida) chips.push('<span class="chip">Dura '+esc(r.vida)+'</span>');
+  if(r.vazao) chips.push('<span class="chip">'+esc(r.vazao)+'</span>');
+  chips.push(r.cloro ? '<span class="chip ok">Tira cloro</span>' : '<span class="chip nao">Não tira cloro</span>');
+  if(r.classe) chips.push('<span class="chip">Classe '+esc(r.classe)+'</span>');
+  return '<div class="rf'+(r.alerta?' alerta':'')+'" data-rf="'+esc(r.cod)+'"><div class="ft" data-foto="'+esc(r.foto)+'" data-nome="'+esc(r.nome)+'"><img loading="lazy" src="'+href(r.foto)+'" alt="">'+(r.fotoAparelho?'<small>aparelho</small>':'')+'</div>'
+    + '<div class="tx"><div class="topo">'+(r.semCod?'':'<span class="cod">Cód. '+esc(r.cod)+'</span>')+(r.top?'<span class="mv">Mais vendido</span>':'')+'</div>'
+    + '<h3>'+marcaTxt(r.nome,q)+'</h3>'
+    + '<div class="serve"><span>Serve em</span>'+marcaTxt(r.serve,q)+'</div>'
+    + '<div class="chips">'+chips.join('')+'</div>'
+    + (r.dica?'<div class="dica">'+esc(r.dica)+'</div>':'')+'</div></div>';
+}
+function refisFiltrados(q, g){
+  var t = norm(q).split(/\s+/).filter(Boolean);
+  return R.filter(function(r){
+    if(g && r.grupo!==g) return false;
+    var s = norm(r.nome+' '+r.cod+' '+r.serve+' '+r.grupo+' '+(r.dica||''));
+    return t.every(function(w){ return s.indexOf(w)>=0; });
+  });
+}
+function refisHTML(q, g){
+  var lista = refisFiltrados(q, g);
+  if(!lista.length) return '<div class="vazio">Nenhum refil encontrado para "'+esc(q)+'".<br>Confira o nome na etiqueta atrás do aparelho, tente só a marca (ex.: <b>IBBL</b>) ou peça uma foto do refil velho.</div>';
+  return RG.map(function(gr){
+    var l = lista.filter(function(r){ return r.grupo===gr; }); if(!l.length) return '';
+    return '<h2 class="sec">'+esc(gr)+' <span class="cnt">'+l.length+'</span></h2><div class="rgrade">'+l.map(function(r){ return cardRefil(r,q); }).join('')+'</div>';
+  }).join('');
+}
+var refQ = '', refG = '';
+function pgRefis(){
+  var pdf = manualPdf(), fab = sec(S.fab), vend = sec(S.vend).filter(function(i){ return i!==pdf; });
+  return '<div class="cabimp so-impressao"><img src="_site/gota.png" alt=""><div><b>Planeta Água Purificadores</b><span>Manual de refis para vendedores · edição de '+esc(window.REFIS_EDICAO||'')+' · Jacobina/BA</span></div></div>'
+    + '<div class="mhead"><div><h1 class="tit">Manual de refis</h1><p class="sub" style="margin:0">Qual refil serve em cada aparelho · '+R.length+' refis · edição de '+esc(window.REFIS_EDICAO||'')+'</p></div>'
+    + (pdf?'<a class="bt prim nao-imprime" href="'+href(pdf.arq)+'" download>'+ic('baixar')+'Baixar o manual (PDF)</a>':'')+'</div>'
+    + '<div class="passos"><div class="passo"><i>1</i><span><b>Pergunte a marca e o modelo</b><em> — fica na etiqueta atrás do aparelho.</em></span></div>'
+    + '<div class="passo"><i>2</i><span><b>Digite aqui embaixo</b><em> — a marca, o modelo ou o código do refil.</em></span></div>'
+    + '<div class="passo"><i>3</i><span><b>Compare a foto</b><em> com o refil velho do cliente antes de vender.</em></span></div></div>'
+    + '<div class="rfiltro"><div class="busca">'+ic('busca')+'<input id="rq" type="search" value="'+esc(refQ)+'" placeholder="Ex.: IBBL, Consul, CPB34, 1100A" autocomplete="off"></div>'
+    + '<div class="gchips" id="rgc"><button data-g="" class="'+(refG?'':'on')+'">Todos</button>'+RG.map(function(g){ return '<button data-g="'+esc(g)+'" class="'+(refG===g?'on':'')+'">'+esc(grupoCurto(g))+'</button>'; }).join('')+'</div></div>'
+    + '<div id="rlista">'+refisHTML(refQ, refG)+'</div>'
+    + '<h2 class="sec">Dicas rápidas</h2>'
+    + '<details class="dicas"><summary>Quando trocar o refil</summary><div class="in"><ul>'
+    + '<li><b>A água sai mais devagar</b> — é o sinal mais confiável.</li>'
+    + '<li><b>Voltou o gosto de cloro</b> ou apareceu gosto de "água parada".</li>'
+    + '<li><b>Passou do prazo</b> do fabricante, mesmo com a água parecendo boa — trocar assim mesmo.</li>'
+    + '<li>Obra na rua, caixa d\'água suja e água com ferro fazem o refil acabar antes.</li>'
+    + '<li>Refil entupido <b>não é defeito</b>: quer dizer que ele segurou a sujeira, que é o trabalho dele.</li></ul></div></details>'
+    + '<details class="dicas"><summary>Refil de beber x pré-filtro</summary><div class="in"><ul>'
+    + '<li>O <b>refil de beber</b> tem carvão: tira cloro, cheiro e gosto (aparece como "Tira cloro").</li>'
+    + '<li>O <b>pré-filtro</b> (Pré E3, FPA20, os PP de carcaça) só segura sujeira e ferrugem — <b>não tira cloro</b>. Nunca venda um no lugar do outro.</li>'
+    + '<li>Filtro de <b>caixa d\'água / entrada da casa</b> (POE) não é para água de beber.</li></ul></div></details>'
+    + '<details class="dicas"><summary>Carcaça: encaixe ou rosca? Block ou Tech?</summary><div class="in"><ul>'
+    + '<li>Olhe a ponta do refil velho: com rosca ou só de encaixe. Trocar um pelo outro <b>vaza</b>.</li>'
+    + '<li>Meça o tamanho: 5", 7" ou 9.3/4" (cerca de 12, 17 ou 25 cm).</li>'
+    + '<li><b>Carbon Block</b> = um bloco de carvão. <b>Carbon Tech</b> = 3 camadas, filtra melhor — é o que a loja indica.</li></ul></div></details>'
+    + '<details class="dicas"><summary>O que é "Classe" na embalagem</summary><div class="in">Quanto mais fina a sujeira que o refil segura, melhor a classe. <b>A</b> é a mais fina, <b>C</b> é o padrão dos refis de purificador, <b>D</b> é comum em pré-filtro e <b>E/F</b> seguram só sujeira grossa (areia e ferrugem). Ajuda a explicar a diferença de preço entre dois refis parecidos.</div></details>'
+    + '<p class="nota">Fonte: Catálogo Planeta Água (Edição 11/2026) e Everest. Na dúvida, confirme em planetaagua.ind.br ou everest.ind.br.</p>'
+    + '<div class="nao-imprime">'
+    + (vend.length?'<h2 class="sec">Vendas e treinamento</h2><div class="lista">'+vend.map(linhaArq).join('')+'</div>':'')
+    + porPasta(fab, function(p, g){ return '<h2 class="sec">Catálogo '+esc(p)+'</h2><div class="lista">'+g.map(linhaArq).join('')+'</div>'; })
+    + '</div>';
+}
+function ligaRefis(){
+  var q = $('rq'); if(!q) return;
+  var atualiza = function(){ $('rlista').innerHTML = refisHTML(refQ, refG); };
+  q.addEventListener('input', function(){ clearTimeout(q.t); q.t = setTimeout(function(){ refQ = q.value; atualiza(); }, 150); });
+  $('rgc').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    refG = b.getAttribute('data-g');
+    Array.prototype.forEach.call($('rgc').children, function(x){ x.classList.toggle('on', x===b); });
+    atualiza();
+  });
 }
 function pgBusca(q){
   var t = norm(q).split(/\s+/).filter(Boolean);
   var ok = function(s){ s = norm(s); return t.every(function(w){ return s.indexOf(w)>=0; }); };
   var ps = P.filter(function(p){ return ok(p.nome+' '+p.linha+' '+p.grupo+' '+(p.cores||[]).join(' ')+' '+(p.refil||'')); });
   var as = A.filter(function(i){ return ok(i.nome+' '+i.pasta+' '+i.sec.replace(/^\d+ - /,'')+' '+tipo(i)); });
+  var rs = refisFiltrados(q, '');
   return '<div class="busca">'+ic('busca')+'<input id="q" type="search" value="'+esc(q)+'" placeholder="Buscar…" autocomplete="off"></div>'
     + (ps.length?'<h2 class="sec">Produtos <span class="cnt">'+ps.length+'</span></h2><div class="prods">'+ps.map(cardProd).join('')+'</div>':'')
+    + (rs.length?'<h2 class="sec">Refis <span class="cnt">'+rs.length+'</span><span class="esp"></span><a class="bt" href="#refis">Manual de refis</a></h2><div class="rgrade">'+rs.slice(0,8).map(function(r){ return cardRefil(r,q); }).join('')+'</div>'+(rs.length>8?'<p class="nota">Mostrando 8 de '+rs.length+'. Veja todos no manual de refis.</p>':''):'')
     + (as.length?'<h2 class="sec">Arquivos <span class="cnt">'+as.length+'</span></h2><div class="grade">'+as.map(cardArq).join('')+'</div>':'')
-    + (!ps.length&&!as.length?'<div class="vazio">Nada encontrado para "'+esc(q)+'".</div>':'');
+    + (!ps.length&&!as.length&&!rs.length?'<div class="vazio">Nada encontrado para "'+esc(q)+'".</div>':'');
 }
 
 /* ---------- roteador ---------- */
@@ -440,7 +588,7 @@ function render(){
   else if(aba==='precos') html = pgPrecos();
   else if(aba==='produtos') html = pgProdutos();
   else if(aba==='divulgacao') html = pgDivulgacao();
-  else if(aba==='consulta') html = pgConsulta();
+  else if(aba==='refis' || aba==='consulta') { aba='refis'; html = pgRefis(); }
   else { aba='inicio'; html = pgInicio(); }
   $('app').innerHTML = html + '<p class="rodape">Planeta Água Purificadores · materiais atualizados em '+(window.GERADO||'').split(' ')[0].split('-').reverse().join('/')+'</p>';
   document.querySelectorAll('[data-aba]').forEach(function(a){ a.classList.toggle('on', a.getAttribute('data-aba')===aba || (aba==='busca'&&false)); });
@@ -449,7 +597,7 @@ function render(){
     q.addEventListener('input', function(){ clearTimeout(q.t); var v=q.value; q.t=setTimeout(function(){ if(v.trim()){ history.replaceState(null,'','#busca/'+encodeURIComponent(v)); render(); var n=$('q'); n.focus(); n.setSelectionRange(n.value.length,n.value.length);} else { location.hash='#inicio'; } }, 250); });
     if(aba==='busca'){ q.focus(); }
   }
-  carregaTextos();
+  carregaTextos(); ligaRefis();
   if(!render.primeira){ render.primeira=1; } else window.scrollTo(0,0);
 }
 window.addEventListener('hashchange', render);
@@ -531,6 +679,10 @@ function baixarTudo(titulo, ids){
 
 /* ---------- cliques ---------- */
 document.addEventListener('click', function(e){
+  var f = e.target.closest('[data-foto]');
+  if(f){ e.preventDefault(); visLista=[]; $('visNome').textContent=f.getAttribute('data-nome'); $('visPalco').innerHTML='<img src="'+href(f.getAttribute('data-foto'))+'" alt="" style="max-height:70vh">';
+    var b=$('visBaixar'); b.href=href(f.getAttribute('data-foto')); b.setAttribute('download',f.getAttribute('data-nome')+'.jpg'); b.innerHTML=ic('baixar')+'Baixar';
+    $('visZap').classList.add('esconde'); $('visRod').textContent=''; $('vis').classList.add('on'); document.body.style.overflow='hidden'; return; }
   var t = e.target.closest('[data-ver],[data-zap],[data-zip],[data-copiar]'); if(!t) return;
   if(t.hasAttribute('data-zap')){ e.preventDefault(); compartilhar(A.filter(function(i){return i.id===t.getAttribute('data-zap');})[0]); return; }
   if(t.hasAttribute('data-zip')){ e.preventDefault(); baixarTudo(t.getAttribute('data-zip'), t.getAttribute('data-ids').split(',')); return; }
